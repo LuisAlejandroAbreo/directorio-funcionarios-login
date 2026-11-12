@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Directorio de funcionarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Directorio de funcionarios</h1>
+    <div class="usuario-barra">
+        <span id="usuarioActual"></span>
+        <button type="button" id="btnSalir">Cerrar sesión</button>
+    </div>
+</header>
+
+<main>
+    <div id="mensaje" class="mensaje" role="status" hidden></div>
+
+    <section class="tarjeta">
+        <h2 id="tituloFormulario">Registrar funcionario</h2>
+        <form id="formFuncionario" novalidate>
+            <div class="campo">
+                <label for="id">ID</label>
+                <input type="text" id="id" readonly placeholder="Se genera al guardar">
+            </div>
+            <div class="campo">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="campo">
+                <label for="cargo">Cargo *</label>
+                <input type="text" id="cargo" required>
+            </div>
+            <div class="campo">
+                <label for="departamento">Departamento *</label>
+                <input type="text" id="departamento" required>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono">
+            </div>
+            <div class="acciones">
+                <button type="submit" id="btnGuardar" class="primario">Guardar</button>
+                <button type="button" id="btnLimpiar">Limpiar</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="tarjeta">
+        <h2>Consultas</h2>
+        <div class="busquedas">
+            <form id="formId" class="busqueda">
+                <label for="buscarId">Por ID</label>
+                <input type="number" id="buscarId" min="1" placeholder="Ej: 1">
+                <button type="submit">Consultar</button>
+            </form>
+            <form id="formNombre" class="busqueda">
+                <label for="buscarNombre">Por nombre</label>
+                <input type="text" id="buscarNombre" placeholder="Ej: ana">
+                <button type="submit">Buscar</button>
+            </form>
+            <form id="formDepartamento" class="busqueda">
+                <label for="buscarDepartamento">Por departamento</label>
+                <input type="text" id="buscarDepartamento" placeholder="Ej: Contabilidad">
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+        <button type="button" id="btnVerTodos">Ver listado completo</button>
+    </section>
+
+    <section class="tarjeta">
+        <h2>Funcionarios</h2>
+        <div class="tabla-contenedor">
+            <table id="tabla">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

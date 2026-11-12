@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión · Directorio de funcionarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Directorio de funcionarios</h1>
+</header>
+
+<main class="auth">
+    <section class="tarjeta auth-tarjeta">
+        <h2>Iniciar sesión</h2>
+        <p class="subtitulo">Ingresa para consultar y administrar el directorio.</p>
+
+        <div id="mensaje" class="mensaje" role="alert" hidden></div>
+
+        <form id="formLogin" novalidate>
+            <div class="campo">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" autocomplete="username" autofocus>
+            </div>
+            <div class="campo">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" class="pw" autocomplete="current-password">
+            </div>
+            <label class="check">
+                <input type="checkbox" id="mostrarPassword"> Mostrar contraseña
+            </label>
+            <button type="submit" id="btnIngresar" class="primario">Ingresar</button>
+        </form>
+
+        <p class="enlace">¿No tienes cuenta? <a href="registro.html">Crear usuario</a></p>
+    </section>
+</main>
+
+<script src="auth.js"></script>
+</body>
+</html>
